@@ -1,0 +1,503 @@
+/* Head banner */
+
+.banner {
+	min-height: 290px;
+	background: #2e2e30 url(../images/banner.jpg) no-repeat;
+	clear: both;
+	margin-top: 16px;
+	border-radius: 0 0 .5em .5em;
+	padding-bottom: 17px;
+	}
+	.banner h1, .banner h2, .banner h3 {
+		margin: 2px;
+		padding-top: 48px;
+		padding-left: 28px;
+		color: #fff;
+		}
+	.banner h2, .banner h3 {
+		font-weight: normal;
+		}
+
+/* Info box with local navigation v2 */
+
+.infobox {
+	border: 1px solid #ccc;
+	border-radius: .5em;
+	overflow: hidden;
+	}
+	.infobox:after {
+		content: "";
+		display: block;
+		clear: both;
+		}
+	.infobox ul.infotabs {
+		margin: 1em 0 0 0;
+		list-style: none;
+		position: relative;
+		}
+	.infobox .infotabs li {
+		margin: 0;
+		padding: 0 0 1em 0;
+		list-style: none;
+		}
+	.infobox .infotabs li ul {
+		margin-top: 1em;
+		border-right: 0;
+		}
+	.infobox .infotabs li a {
+		display: block;
+		padding: .7em .5em;
+		border-radius: .5em 0 0 .5em;
+		color: #666;
+		font-size: .9em;
+		line-height: 1.4em;
+		text-shadow: -1px -1px 1px #fff;
+		border: 1px solid #bbb;
+		border-right: none;
+		
+		background: #c9cacc; /* Old browsers */
+		background: -moz-linear-gradient(top,  #c9cacc 0%, #ffffff 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#c9cacc), color-stop(100%,#ffffff)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  #c9cacc 0%,#ffffff 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  #c9cacc 0%,#ffffff 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  #c9cacc 0%,#ffffff 100%); /* IE10+ */
+		background: linear-gradient(top,  #c9cacc 0%,#ffffff 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c9cacc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+		}
+	.infobox .infotabs li a:hover {
+		opacity: .8;
+		}
+	.infobox .infotabs li a.active {
+		background: #862165;
+		color: #fff;
+		text-shadow: -1px -1px 1px #888;
+		border: none;
+		position: relative;
+		}
+	.infobox .infotabs li a.active:before {
+		content: "►";
+		font-size: 2em;
+		top: 0;
+		bottom: 0;
+		right: -.8em;
+		line-height: 1.3em;
+		display: block;
+		position: absolute;
+		color: #862165;
+		text-shadow: none;
+		}
+	.infobox .infotabs li ul li a {
+		font-size: .7em;
+		}
+	.infobox .infotabs:before {
+		content: "";
+		display: block;
+		position: absolute;
+		width: 1px;
+		height: 800px;
+		top: -1.5em;
+		right: -1px;
+		z-index: -1;
+		background: #ccc;
+		}
+	.infobox > * {
+		
+		padding-left: 2%;
+	}
+	.infobox > *:first-child {
+		
+		box-shadow: 1px 0 4px #aaa;
+		padding-right: 0;
+		padding-left: 1%;
+	}
+
+/* Jumbo List (1-2-3 List) */
+
+ol.jumbolist {
+	overflow: hidden;
+	border-radius: 7px;
+	border: 1px solid #cfcfcf;
+	display: inline-block;
+
+	background: #f6f6f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f6f6f6 0%, #e5e5e5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f6f6), color-stop(100%,#e5e5e5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f6f6f6 0%,#e5e5e5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f6f6f6 0%,#e5e5e5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f6f6f6 0%,#e5e5e5 100%); /* IE10+ */
+	background: linear-gradient(top,  #f6f6f6 0%,#e5e5e5 100%); /* W3C */
+	
+	min-height: 100px;
+	box-shadow: 0 2px 3px #ddd;
+	margin: 0;
+	padding: 0;
+	}
+	.jumbolist li {
+		width: 24%;
+		display: block;
+		float: left;
+		line-height: 1.2em;
+		position: relative;
+		margin: 0;
+		padding: 34px 0 0 80px;
+		background: url(../images/jumbolist-separator.png) left center no-repeat;
+		min-height: 76px;
+		}	
+	.jumbolist li:first-child {
+		background: none;
+		padding-left: 40px;
+		margin-left: 1em;
+		}
+	ol.jumbolist li:before {
+		display: block;
+		background: none;
+		color: #c3a867;
+		font-size: 58px;
+		text-shadow: 0px 1px white, -0px -2px #999;		
+		line-height: 1em;
+		position: absolute;
+		left: 6px;
+		top: 12px;
+		width: 20px;
+	    content: counter(level1);
+		}
+	.jumbolist li:first-child:before {
+		left: -28px;
+		}
+	.jumbolist li b {
+		display: block;
+		}
+
+/* Concertina (Accordion) */
+
+.concertina {
+
+	}
+	.concertina > *:not(h3) {
+		display: none;
+		}
+	.concertina h3 {
+		cursor: pointer;
+		}
+	.concertina :nth-child(1), .concertina :nth-child(2) {
+		display: block;
+		}
+	.concertina.horizontal > * {
+		float: left;
+		max-width: 400px;
+		}
+	.concertina.horizontal h3 {
+		width: 20px;
+		overflow: hidden;
+		}
+	.concertina.horizontal:after {
+		content: "";
+		display: block;
+		clear: both;
+		}
+
+/* Slider */
+
+.slider {
+	position: relative;
+	z-index: 999;
+	overflow: hidden;
+	}
+	.slider > * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -999;
+		opacity: 0;
+		display: none;
+		}
+	.slider > *:first-child {
+		opacity: 1;
+		display: block;
+		}
+	.slider > .noslide {
+		z-index: 999;
+		position: static;
+		opacity: 1;
+		display: block;
+		}
+	.slider h3 {
+		padding: 1em;
+		}
+	.slider > .controls {
+		position: absolute;
+		top: 0px;
+		left: .5em;
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;		
+		}
+	.slider .controls a {
+		display: inline-block;
+		padding: .7em .9em;
+		font-weight: bold;
+		background: #333;
+		background: rgba(0,0,0,.3);
+		margin: .5em;
+		cursor: pointer;
+		color: #fff;
+		-webkit-transition: background-color .2s linear; -moz-transition: background-color .2s linear; transition: background-color .2s linear;
+		border-radius: 3px;
+		border: 1px dotted #999;
+		}
+	.slider .controls a.active {
+		background: #000;
+		background: rgba(0,0,0,.8);
+		border: 1px dotted rgba(0,0,0,0);
+		}
+	.slider .controls a:hover {
+		background: #666;
+		background: rgba(0,0,0,1);
+		}
+	.slider img {
+		max-width: 100%;
+		}
+
+/* Tooltip */
+
+.tool {
+	border-bottom: 1px dotted rgba(255,255,255,.2);
+	cursor: help;
+	position: relative;
+	font-weight: bold;
+	}
+.tip {
+	background: #666;
+	background: rgba(0,0,0,.9);
+	color: #ddd;
+	padding: .5em;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: normal;
+	position: absolute;
+	top: auto;
+	left: 0;
+	display: none;
+	cursor: default;
+	width: 480px;
+	overflow: hidden;
+	line-height: 1.5em;
+	z-index: 999;
+	text-align: left;
+	}
+
+/* Titled Box */
+
+.titledbox {
+	position: relative;
+	border: 1px solid #ebebeb;
+	border-radius: 6px;
+	margin: 1em 0;
+	clear: both;
+	padding: 0 .5em;
+	}
+	.titledbox h1.titleinframe, .titledbox h2.titleinframe, .titledbox h3.titleinframe, .titledbox h4.titleinframe {
+		position: absolute;
+		background: #fff;
+		top: -2.4em;
+		left: .5em;
+		font-size: 12px;
+		font-weight: bold;
+		color: inherit;
+		padding: 0 .5em;
+		} 
+	.titledbox > h2 {
+		margin: 20px 10px;
+		}
+	.titledbox > .column1, .titledbox > .column2 {
+		margin: .5em 1% 0 1%;
+		}
+	.titledbox.gradient {
+		background: #e1e1e1 url(../images/greydient.png) repeat-x top;
+		}
+
+/* "Prizes" logos slider */
+
+#prizes {
+	padding: 0 40px;
+	position: relative;
+	max-width: 800px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	margin: 1em 0;
+	}
+	#prizes > div {
+		height: 132px;
+		border: 1px solid #c1c1c1;
+		-webkit-box-shadow: 0 0 4px #aaa;
+		position: relative;
+		overflow: hidden;
+		margin-top: 2em;
+		margin-right: 0 !important;
+		}
+	a.prizesleft, a.prizesright {
+		position: absolute;
+		top: 0;
+		right: 0; 
+		opacity: 0.7;
+		cursor: pointer;
+		border: none;
+		width: 40px;
+		height: 132px;
+		background: url(../images/right.png) left top no-repeat;
+		-webkit-transition: opacity 0.2s linear; -moz-transition: opacity 0.2s linear; transition: opacity 0.2s linear;
+		}
+	a.prizesleft:hover, a.prizesright:hover {
+		background-position: -40px 0;
+		}
+	a.prizesleft {
+		background: url(../images/left.png) left top no-repeat;
+		right: auto;
+		left: 0;
+		}
+	#prizes > div > img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 9;
+		_display: none;
+	}
+	#prizes > div > img:nth-child(2) {
+		right: 0;
+		left: auto;
+		}
+	#prizes a img {
+		border: none;
+		width: 80px;
+		height: 90px;
+		margin: 20px 17px;
+		}
+	#prizes div a { /* The logos container */
+		position: absolute;
+		top: 0;
+		left: 0;
+		}
+	#prizes span {
+		font-weight: bold;
+		padding: 7px 0 0 20px;
+		display: block;	
+		}
+
+/* Modal window */
+
+#blackbox {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 9999;
+	background: rgba(0,0,0,.8);
+	}
+	#blackbox .modal-box {
+		width: 640px;
+		max-width: 90%;
+		background: #fff;
+		box-shadow: 0 0 15px #862165;
+		z-index: 99999;
+		margin: 1em auto;
+		border-radius: 8px;
+		border: 2px solid #862165;
+		overflow: hidden;
+		padding: .5em;
+		}
+		#blackbox .modal-box:after {
+			display: block;
+			content: "";
+			clear: both;
+			}
+		#blackbox .modal-box h1 {
+			color: #222;
+			}
+		#tip-close {
+			float: right;
+			cursor: pointer;
+			width: 1em;
+			height: 1em;
+			padding: .2em;
+			color: #862165;
+			font-size: 2em;
+			}
+		#blackbox .modal-box > div {
+			position: relative;
+			}
+		#blackbox .modal-box > * {
+			max-width: 100%;
+		}
+
+/* Back to top button */
+
+a.backtotop {
+	text-align: center;
+	display: block;
+	width: 2em;
+	height: 2em;
+	line-height: 2em;
+	margin: .5em auto;
+	font-weight: bold;
+	background: #862165;
+	color: #fff;
+	border-radius: 2em;
+	font-family: "Hiragino Mincho ProN";
+	cursor: pointer;
+	}
+	.backtotop:hover {
+		color: #000;
+		}
+
+@media screen and (max-width: 910px) {
+	.banner {
+		border-radius: .5em;
+	}
+	}
+
+@media screen and (max-width: 768px) {
+	.jumbolist li {
+		width: 22%;
+		}
+	.backtotop:hover {
+		color: #fff;
+		}
+	}
+
+@media screen and (max-width: 480px) {
+	.jumbolist li {
+		clear: left;
+		width: 64%;
+		background: none;
+		margin-left: 1em;
+		padding-left: 4em;
+		}
+	.jumbolist li:first-child {
+		padding-left: 4em;
+		}
+	ol.jumbolist li:before, ol.jumbolist li:first-child:before {
+		left: 0;
+		padding-left: .1em;
+		}
+	.infobox .infotabs li a {
+		border-radius: .5em;
+		margin-right: 0;
+	}
+	.infobox .infotabs li a.active:before {
+		content: "";
+		}
+	.infobox .column34 {
+		width: 90%;
+	}
+	.infobox .infotabs:before {
+	    -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none;
+	    background: none;
+	}
+	}
