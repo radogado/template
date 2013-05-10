@@ -383,7 +383,26 @@ function customTracker_Event ( cat, act, lab ) { return customTracker( { _ucat: 
     document.write(
         '<script type="text/javascript"> customTracker(); </script>'
     );
-//} 
+//}
+
+/* RID relay. Omit links starting with "javascript", "mailto" */
+
+// get all URL parameters and relay them to all links on the page
+
+function relay_parameters () {
+
+	parameters = getURLParameters();
+	
+	$('a[href]:not(a[href^="javascript"]):not(a[href^="mailto"])').each( function () {
+		
+		for (var name in parameters) {
+			var hash = $(this).attr('href').split('#')[1] ? ( '#' + $(this).attr('href').split('#')[1] ) : '';
+			$(this).attr('href', updateURLParameter( $(this).attr('href').split('#')[0], name, parameters[name] ) + hash );
+	
+		} 
+	});
+
+}
 
 /* ███████████████████ After DOM is created ███████████████████ */
 
@@ -429,20 +448,9 @@ $(document).ready(function() {
 	$('a.prizesleft').click ( leftclick );
 	$('a.prizesright').click ( rightclick );
 
-/* RID relay. Omit links starting with "javascript", "mailto" */
+/* Relay URI parameters to links */
 
-	// get all URL parameters and relay them to all links on the page
-
-	parameters = getURLParameters();
-	
-	$('a[href]:not(a[href^="javascript"]):not(a[href^="mailto"])').each( function () {
-		
-		for (var name in parameters) {
-			var hash = $(this).attr('href').split('#')[1] ? ( '#' + $(this).attr('href').split('#')[1] ) : '';
-			$(this).attr('href', updateURLParameter( $(this).attr('href').split('#')[0], name, parameters[name] ) + hash );
-	
-		} 
-	});
+	relay_parameters();
 	
 /* Modal window: open a link inside it */
 
@@ -466,7 +474,7 @@ $(document).ready(function() {
 			e.stopPropagation();
 		});
 		
-		if ( $(this).hasClass('lightbox') ) {
+		if ( $(this).hasClass('lightbox') ) { // Show an image lightbox...
 			var image_url = $(this).attr('href');
 			$('#blackbox .modal-box').prepend('<img src="' + image_url + '" alt="Lightbox">',
 				
@@ -497,10 +505,10 @@ $(document).ready(function() {
 			
 		} else {
 			
-			$('#blackbox .modal-box').load ( 
+			$('#blackbox .modal-box').load ( // ... or load external content in a modal window
 				( ($(this).attr('href').split('#')[1] ) ? ($(this).attr('href').split('#')[0] + ' #' + $(this).attr('href').split('#')[1]) : ( $(this).attr('href') ) ),
 				
-				function () {
+				function () { // After content has been loaded
 					$('#blackbox').height( $(document).height() + 32 );
 					$('#blackbox .modal-box > div:first-child').prepend('<div class="close"> × </div>');
 					$('#blackbox .modal-box .close').click( function () {
@@ -521,6 +529,7 @@ $(document).ready(function() {
 					if ( $('#blackbox .modal-box').height() < window.innerHeight ) { // Center it vertically
 						$('#blackbox .modal-box').css('margin', (( window.innerHeight - $('#blackbox .modal-box').height() ) /2 + window.scrollY ) + 'px auto' );
 					}
+					relay_parameters();
 				});
 			
 		}
