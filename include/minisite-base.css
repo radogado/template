@@ -698,6 +698,10 @@ select, input, option {
 	border-radius: 3px;
 	border: 1px solid #c7c8ca;
 	}
+option {
+	border: none;
+	margin-bottom: 0;
+}
 input {
 	background: #fdfdfd;
 	padding: .9em .7em;
