@@ -568,10 +568,12 @@ $(document).ready(function() {
 
 /* Tables: Embed in a scrollable container */
 	
+/*
 	$('table').before('<div class="table-container"></div>');
 	$('.table-container').each ( function () { 
 		$(this).append( $(this).next() ); 
 	} );
+*/
 
 /* Select: wrap in a div for better styling */
 
